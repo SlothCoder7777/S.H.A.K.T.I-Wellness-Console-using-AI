@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>S.H.A.K.T.I • Health Console</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+<script defer src="{{ url_for('static', filename='js/base.js') }}"></script>
+</head>
+<body>
+    <div class="site">
+
+    <!-- glow -->
+    <div class="scene-glow"></div>
+
+    <!-- orbiting nutrition halos -->
+    <div class="floating-layer">
+        <div class="food-orbit">
+            <div class="food-node apple"></div>
+            <div class="food-node salad"></div>
+            <div class="food-node water"></div>
+            <div class="food-node rice"></div>
+        </div>
+        <div class="food-orbit alt">
+            <div class="food-node apple"></div>
+            <div class="food-node salad"></div>
+            <div class="food-node water"></div>
+            <div class="food-node rice"></div>
+        </div>
+    </div>
+
+    <!-- toast container -->
+    <div class="toast-layer" id="toastLayer"></div>
+
+    <!-- TOP NAV -->
+    <nav class="top-nav">
+        <a href="{{ url_for('dashboard') }}" class="nav-link {% if request.endpoint=='dashboard' %}active{% endif %}">Dashboard</a>
+        <a href="{{ url_for('survey_page') }}" class="nav-link {% if request.endpoint=='survey_page' %}active{% endif %}">Survey</a>
+        <a href="{{ url_for('chat_page') }}" class="nav-link {% if request.endpoint=='chat_page' %}active{% endif %}">Chat</a>
+        <a href="{{ url_for('insights_page') }}" class="nav-link {% if request.endpoint=='insights_page' %}active{% endif %}">Insights</a>
+        <span class="nav-right">S.H.A.K.T.I • Not a medical device</span>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <main class="page-shell" data-tilt data-tilt-max="6" data-tilt-glare="0.12">
+        {% block content %}{% endblock %}
+    </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="panel reveal-3d" data-tilt data-tilt-max="10">
+    <div class="section-head"><span>Body Stats & Daily Check-In</span></div>
+    <div class="section-sub">Fill anything you know. It's okay to leave blanks. Your data powers personalized insights.</div>
+
+    <div class="vitals-grid">
+        <div class="input-block"><label>Age (yrs)</label><input id="age" type="number" min="1" placeholder="21" /></div>
+        <div class="input-block"><label>Height (cm)</label><input id="height" type="number" min="1" placeholder="170" /></div>
+        <div class="input-block"><label>Weight (kg)</label><input id="weight" type="number" min="1" placeholder="68" /></div>
+        <div class="input-block"><label>Sleep last night (hrs)</label><input id="sleepHours" type="number" step="0.5" min="0" placeholder="6" /></div>
+        <div class="input-block"><label>Water today (liters)</label><input id="waterIntake" type="number" step="0.1" min="0" placeholder="1.5" /></div>
+        <div class="input-block"><label>Stress level</label>
+            <select id="stressLevel">
+                <option value="">--select--</option>
+                <option value="low">Low 😌</option>
+                <option value="medium">Medium 😐</option>
+                <option value="high">High 😵</option>
+            </select>
+        </div>
+        <div class="input-block wide"><label>Main goal</label><input id="goal" type="text" placeholder="More energy in day, less sugar cravings" /></div>
+        <div class="input-block wide"><label>How do you feel today? Any discomfort?</label><textarea id="symptoms" placeholder="Example: morning acidity, low mood, back tightness"></textarea></div>
+        <div class="input-block wide"><label>Diet type</label>
+            <select id="dietType">
+                <option value="">--select--</option>
+                <option value="veg">Veg 🌿</option>
+                <option value="non-veg">Non-veg 🍗</option>
+                <option value="vegan">Vegan 🌱</option>
+                <option value="mixed">Mixed 🍽️</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="snapshotBox" class="snapshot-box">
+        <div class="snapshot-title">Quick Health Snapshot 🧠</div>
+        <div class="snapshot-row"><b>BMI:</b> <span id="bmiValue">--</span> (<span id="bmiStatus">--</span>)</div>
+        <div class="snapshot-row"><b>Maintain calories est:</b> <span id="calorieValue">--</span> kcal</div>
+        <div class="snapshot-row"><b>Suggested water goal:</b> <span id="waterGoalValue">--</span> L / day</div>
+        <div class="snapshot-row"><b>Sleep check:</b> <span id="sleepTip">--</span></div>
+        <div class="snapshot-row small-note">This is general wellness guidance, not medical advice.</div>
+    </div>
+
+    <div class="btn-row">
+        <button class="action-btn" id="calcBasicsBtn">Calculate My Basics 🧮</button>
+        <button class="action-btn" id="analyzeBtn">Generate Wellness Insights ✨</button>
+        <button class="action-btn" id="downloadPdfBtn">Download My Report ⬇</button>
+    </div>
+
+    <div id="surveyOutput" class="survey-output"></div>
+</section>
+{% endblock %}

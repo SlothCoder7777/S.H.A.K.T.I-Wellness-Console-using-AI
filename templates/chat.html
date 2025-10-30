@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="panel reveal-3d" data-tilt data-tilt-max="10">
+    <div class="chat-header">
+        <div class="chat-header-left">
+            <div class="chat-name">S.H.A.K.T.I. is online 💖</div>
+            <div class="chat-status">Holistic Support • Mind • Body • Routine</div>
+            <div class="chat-disclaimer">Not a doctor. For emergencies, get in-person help now.</div>
+        </div>
+        <button class="chat-download-btn" id="downloadChatPdfBtn">Download Chat ⬇</button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+        <div class="msg-row"><div class="msg-bot">
+            Namaste 🙏 I'm S.H.A.K.T.I. — Tell me how you're feeling today ❤️
+            (General guidance only, not medical advice.)
+        </div></div>
+    </div>
+
+    <div class="chat-footer">
+        <input id="chatInput" class="chat-input" placeholder="Ask S.H.A.K.T.I. anything…" maxlength="400" />
+        <div class="mic-btn" title="voice (visual only)">🎙</div>
+        <button id="sendChatBtn" class="chat-send-btn">Send ➤</button>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+{% block content %}
+<header class="top-banner">
+    <div class="banner-left">
+        <div class="banner-line1">
+            <div class="shakti-heading">S.H.A.K.T.I • Wellness HUD</div>
+            <div class="live-pill"><span class="live-dot"></span><span>LIVE</span><span id="statusTime">--:--</span></div>
+        </div>
+        <div class="banner-sub">Hydration, rest, stress and routine alignment. (Educational only.)</div>
+    </div>
+    <div class="banner-metrics">
+        <div class="metric-box"><div class="metric-label">Heart</div><div class="metric-value" id="headerBpm">78 BPM</div></div>
+        <div class="metric-box"><div class="metric-label">Wellness Score</div><div class="metric-value" id="headerScore">72 / 100</div></div>
+        <div class="metric-box"><div class="metric-label">Hydration Streak</div><div class="metric-value" id="headerStreak">0 days</div></div>
+    </div>
+</header>
+
+<section class="hero-card reveal-3d" data-tilt data-tilt-max="10">
+    <div class="hero-flex">
+        <div class="hero-left">
+            <div class="shakti-badge">Daily Status</div>
+            <div class="hero-title">Your Signals</div>
+            <div class="hero-sub">These signals help guide your next 24 hours. (Not a diagnosis.)</div>
+        </div>
+        <div class="heart-holo">
+            <div class="heart-core"></div>
+            <div class="ring-outer"></div>
+            <div class="ring-text" id="ringText">78 BPM</div>
+        </div>
+        <div class="wellness-chip">
+            <div>Wellness Score</div>
+            <div class="wellness-main" id="wellnessScore">72</div>
+            <div class="wellness-sub" id="wellnessNote">Good • hydrate 💧</div>
+        </div>
+    </div>
+    <div class="streak-chip" id="streakChip">🔥 Hydration Streak: 0 days</div>
+</section>
+
+<section class="stats-strip reveal-3d" data-tilt data-tilt-max="8">
+    <div class="stat-card"><div class="stat-label">Water Today</div><div class="stat-value"><span id="waterVal">--</span><span class="stat-unit">L</span></div><div class="stat-note warn" id="waterNote">drink more</div></div>
+    <div class="stat-card"><div class="stat-label">Sleep Last Night</div><div class="stat-value"><span id="sleepVal">--</span><span class="stat-unit">hrs</span></div><div class="stat-note warn" id="sleepNote">low</div></div>
+    <div class="stat-card"><div class="stat-label">Goal Focus</div><div class="stat-value"><span id="goalShort">–</span></div><div class="stat-note" id="goalNote">focus mode</div></div>
+    <div class="stat-card"><div class="stat-label">Stress Level</div><div class="stat-value"><span id="stressVal">–</span></div><div class="stat-note" id="stressNote">log honestly 😌</div></div>
+</section>
+{% endblock %}

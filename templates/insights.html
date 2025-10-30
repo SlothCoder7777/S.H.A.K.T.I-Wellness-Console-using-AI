@@ -1,0 +1,13 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="panel reveal-3d" data-tilt data-tilt-max="10">
+    <div class="section-head"><span>Saved Insights & Reports</span></div>
+    <p class="section-sub">This page shows the last generated wellness insight text from your browser storage. You can download it as a PDF.</p>
+    <div id="savedInsights" class="survey-output" style="display:block;"></div>
+    <div class="btn-row">
+        <button class="action-btn" id="downloadSavedPdfBtn">Download Last Insight ⬇</button>
+        <button class="action-btn" id="clearSavedBtn">Clear Saved</button>
+    </div>
+</section>
+{% endblock %}
